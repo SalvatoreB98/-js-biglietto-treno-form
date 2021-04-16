@@ -12,7 +12,6 @@ body{
     background-color:#b91450 ;
 }
 h1{
-    text-align: center;
     color: white;
     font-size: 30px;
     margin: 25px;
@@ -128,5 +127,34 @@ button:hover {
     filter: drop-shadow(2px 5px 10px rgba(2, 2, 2, 0.466));
 }
 
-/* 
-RESPONSIVE */
+/* RESPONSIVE */
+@media screen and (max-width:800px){
+    .input-container{
+        flex-direction: column;
+    }
+    .dettagli{
+        flex-direction: column;
+    }
+    .piano{
+        flex-direction: column;
+    }
+    .valore{
+        margin-top: 5px;
+    }
+    label div{
+        text-align: left;
+    }
+    .rounded{
+        border: 1px solid #b91450;
+        border-radius: 5px;
+        height: 25px;
+        text-align: center;
+        min-width: 40px;
+    }
+    input{
+        width: 100%;
+    }
+    button{
+        width: 100%;
+    }
+}
