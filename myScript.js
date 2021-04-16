@@ -26,6 +26,9 @@ function onWindowLoad() {
          var kilometri = document.getElementById("kilometri").value;
          document.getElementById("costo").innerHTML = calcolaPrezzoFinale(fasciaEta,kilometri,prezzoKilometro()) + "€";
     })
+    myForm.addEventListener("reset", function() {
+        console.log("reset")
+    })
 }
 
 

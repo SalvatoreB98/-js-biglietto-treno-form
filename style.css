@@ -33,7 +33,7 @@ label div{
     color: #b91450;
     text-align: center;
 }
-button{
+button, [type*="reset"] {
     font-size: large;
     color: #b91450;
     font-weight: 700;
