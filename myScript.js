@@ -44,6 +44,8 @@ function onWindowLoad() {
 
 
     myForm.addEventListener("reset", function () {
+        var outputBiglietto = document.getElementById("output");
+        outputBiglietto.classList.remove("opacity-animation");
         console.log("reset")
     })
 }
