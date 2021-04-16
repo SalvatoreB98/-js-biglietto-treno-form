@@ -28,9 +28,11 @@ function onWindowLoad() {
 
             // prende tutti gli argomenti che servono e li processa nella funzione per il costo totale. Infine inietta il risultato nel corrispettivo ID
             document.getElementById("costo").innerHTML = calcolaPrezzoFinale(fasciaEta, kilometri, prezzoKilometro()) + "€";
+            document.getElementById("errore").innerHTML = "";
         }
         else{
-            console.log("verificare i dati") ;
+            console.log("verificare i dati");
+            document.getElementById("errore").innerHTML = "ATTENZIONE! Dati non validi.";
         }
 
     })

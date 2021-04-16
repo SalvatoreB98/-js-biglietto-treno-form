@@ -101,3 +101,8 @@ button, [type*="reset"] {
     text-align: center;
     min-width: 100px;
 }
+.error-position{
+    position: absolute;
+    left: 25px;
+    bottom: 5px;
+    color: #b91450;
