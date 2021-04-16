@@ -105,4 +105,15 @@ button, [type*="reset"] {
     position: absolute;
     left: 25px;
     bottom: 5px;
-    color: #b91450;
+    color: red;
+}
+/* ANIMATIONS */
+.output{
+    /* display: none; */
+    opacity: 0%;
+    transition: opacity 1s ease-in-out;
+    
+}
+.opacity-animation{
+    opacity: 100%;
+}

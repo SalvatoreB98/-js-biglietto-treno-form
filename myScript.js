@@ -28,7 +28,12 @@ function onWindowLoad() {
 
             // prende tutti gli argomenti che servono e li processa nella funzione per il costo totale. Infine inietta il risultato nel corrispettivo ID
             document.getElementById("costo").innerHTML = calcolaPrezzoFinale(fasciaEta, kilometri, prezzoKilometro()) + "€";
+            // resetta il messaggio di errore
             document.getElementById("errore").innerHTML = "";
+            
+            var outputBiglietto = document.getElementById("output");
+            outputBiglietto.style.display = "block";
+            outputBiglietto.classList.add("opacity-animation");
         }
         else{
             console.log("verificare i dati");
@@ -43,11 +48,11 @@ function onWindowLoad() {
     })
 }
 
-
 function prezzoKilometro() {
     var prezzoKilometro = 0.21;
     return prezzoKilometro;
 }
+
 function calcolaOfferta(etaPasseggeri) {
     var tipoOfferta;
     if (etaPasseggeri == "minorenne") {
@@ -62,15 +67,14 @@ function calcolaOfferta(etaPasseggeri) {
     return tipoOfferta;
 }
 
-////////////////
 function calcolaCarrozza() {
     return Math.floor(Math.random() * 6 + 1);
 }
-/////////////////
+
 function calcolaCodiceCP() {
     return Math.floor(Math.random() * 10000 + 90000);
 }
-/////////////////
+
 function calcolaPrezzoFinale(etaPasseggeri, iKilometri, ilPrezzoKilometro) {
     var prezzoBigliettoUmano;
     var sconto;
@@ -93,3 +97,4 @@ function calcolaPrezzoFinale(etaPasseggeri, iKilometri, ilPrezzoKilometro) {
     }
     return prezzoBigliettoUmano;
 }
+
