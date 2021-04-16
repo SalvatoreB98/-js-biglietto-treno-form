@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* SELETTORI DI TAG */
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color:#b91450 ;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin: 25px;
+}
+h2{
+    font-size: 20px;
+}
+h3{
+    font-size: 15px;
+}
+label{
+    margin: 25px;
+}
+label div{
+    margin: 10px;
+    font-weight: 500;
+    color: #b91450;
+    text-align: center;
+}
+button{
+    font-size: large;
+    color: #b91450;
+    font-weight: 700;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #b91450;
+    border-radius: 5px;
+}
+
+/* SELETTORI DI CLASSE */
+.container{
+    width: 75%;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 800px;
+}
+.card{
+    background-color: white;
+    padding: 20px;
+}
+.form-section{
+ border-radius: 10px;
+ filter: drop-shadow(5px 2px 10px #0000009f );
+
+}
+.input-container{
+    display: flex;
+    justify-content: center;
+}
+.submit-container{
+    text-align: center;
+    padding: 25px 0px 20px;
+}
+.dettagli{
+    display: flex;
+}
+.nome{
+    background-color: gray;
+}
+.piano{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* UTILITIES */
+.rounded{
+    border: 1px solid #b91450;
+    border-radius: 5px;
+    height: 25px;
+    text-align: center;
+    min-width: 100px;
+}
