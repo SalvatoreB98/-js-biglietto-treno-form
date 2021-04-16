@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="framework.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -14,19 +13,19 @@
     <div class="container">
         <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
         <div class="card form-section">
-            <form action="">
+            <form id="form-biglietto">
                 <div class="input-container">
                     <label>
                         <div>Nome e cognome</div>
-                        <input type="text" name="nomeCognome" class="rounded">
+                        <input type="text" name="nomeCognome" class="rounded" id="name">
                     </label>
                     <label>
                         <div>Km da percorrere</div>
-                        <input type="text" name="km" class="rounded">
+                        <input type="text" name="km" class="rounded" id="kilometri">
                     </label>
                     <label>
                         <div>Fascia di età</div>
-                        <select class="rounded" name="age">
+                        <select class="rounded" name="age" id="fascia-eta">
                             <option value="minorenne">Minorenne</option>
                             <option value="adulto">Adulto </option>
                             <option value="over65">Over65</option>
@@ -48,14 +47,13 @@
                 <div class="nome">
                     <h3>NOME PASSEGGERO</h3>
                     <span id="nome-passeggero">
-                        Salvatore Butera
+                        
                     </span>
                 </div>
                 <div class="piano">
                     <div class="dati">
                         <h3>Offerta</h3>
                         <div class="valore" id="offerta">
-                            Sconto
                         </div>
                     </div> 
                     <div class="dati">
@@ -72,7 +70,7 @@
                     </div>  
                     <div class="dati">
                         <h3>Costo biglietto</h3>
-                        <div class="valore" id="Costo">
+                        <div class="valore" id="costo">
                             10,35€
                         </div>
                     </div>  
