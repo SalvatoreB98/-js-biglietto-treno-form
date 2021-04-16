@@ -8,31 +8,41 @@ function onWindowLoad() {
 
     myForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        //prende e inietta il nome
+        // prende i dati del form
         var nomeCognome = document.getElementById("name").value;
-        console.log(nomeCognome);
-        document.getElementById("nome-passeggero").innerHTML = nomeCognome;
-        //prende i km da percorrere
         var kilometri = document.getElementById("kilometri").value;
-        // prende il dato inserito , calcola che offerta verrà applicata e infine la inietta
         var fasciaEta = document.getElementById("fascia-eta").value;
-        var offerta = calcolaOfferta(fasciaEta);
-        document.getElementById("offerta").innerHTML = offerta;
-        // calcola la carrozza e inietta nel corrispettivo ID
-        document.getElementById("carrozza").innerHTML = calcolaCarrozza();
-        // calcola il codice treno e inietta nel corrispettivo ID
-        document.getElementById("codiceCP").innerHTML = calcolaCodiceCP();
-         // prende tutti gli argomenti che servono e li processa nella funzione per il costo total.Infine inietta il risultato nel corrispettivo ID
-         var kilometri = document.getElementById("kilometri").value;
-         document.getElementById("costo").innerHTML = calcolaPrezzoFinale(fasciaEta,kilometri,prezzoKilometro()) + "€";
+        if (nomeCognome!="" && !isNaN(kilometri)) {
+            // Inietta il nome del passeggero
+            document.getElementById("nome-passeggero").innerHTML = nomeCognome;
+
+            //Calcola l' offerta che verrà applicata dalla funzione e la inietta
+            var offerta = calcolaOfferta(fasciaEta);
+            document.getElementById("offerta").innerHTML = offerta;
+
+            // calcola la carrozza e inietta nel corrispettivo ID
+            document.getElementById("carrozza").innerHTML = calcolaCarrozza();
+
+            // calcola il codice treno e inietta nel corrispettivo ID
+            document.getElementById("codiceCP").innerHTML = calcolaCodiceCP();
+
+            // prende tutti gli argomenti che servono e li processa nella funzione per il costo totale. Infine inietta il risultato nel corrispettivo ID
+            document.getElementById("costo").innerHTML = calcolaPrezzoFinale(fasciaEta, kilometri, prezzoKilometro()) + "€";
+        }
+        else{
+            console.log("verificare i dati") ;
+        }
+
     })
-    myForm.addEventListener("reset", function() {
+
+
+    myForm.addEventListener("reset", function () {
         console.log("reset")
     })
 }
 
 
-function prezzoKilometro(){
+function prezzoKilometro() {
     var prezzoKilometro = 0.21;
     return prezzoKilometro;
 }
@@ -59,28 +69,25 @@ function calcolaCodiceCP() {
     return Math.floor(Math.random() * 10000 + 90000);
 }
 /////////////////
-function calcolaPrezzoFinale(etaPasseggeri,iKilometri, ilPrezzoKilometro) {
+function calcolaPrezzoFinale(etaPasseggeri, iKilometri, ilPrezzoKilometro) {
     var prezzoBigliettoUmano;
     var sconto;
     var scontoAnziani = 0.4;
     var scontoMinori = 0.2;
     var prezzoBiglietto = iKilometri * ilPrezzoKilometro;
     prezzoBigliettoUmano = prezzoBiglietto.toFixed(2);
-    if (etaPasseggeri =="minorenne" ) {
+    if (etaPasseggeri == "minorenne") {
         var sconto = prezzoBiglietto * scontoMinori;
         prezzoBiglietto = prezzoBiglietto - sconto;
         prezzoBigliettoUmano = prezzoBiglietto.toFixed(2)
-        console.log(prezzoBigliettoUmano + "€");
+
     }
     else if (etaPasseggeri == "over65") {
         sconto = prezzoBiglietto * scontoAnziani;
         prezzoBiglietto = prezzoBiglietto - sconto;
         prezzoBigliettoUmano = prezzoBiglietto.toFixed(2)
-        console.log(prezzoBigliettoUmano + "€");
 
-    }
-    else {
-        console.log(prezzoBigliettoUmano + "€");
+
     }
     return prezzoBigliettoUmano;
 }
