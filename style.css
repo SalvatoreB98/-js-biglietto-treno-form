@@ -12,6 +12,7 @@ body{
     background-color:#b91450 ;
 }
 h1{
+    text-align: center;
     color: white;
     font-size: 30px;
     margin: 25px;
@@ -46,7 +47,8 @@ button, [type*="reset"] {
 .container{
     width: 75%;
     margin: auto;
-    margin-top: 75px;
+    margin-top: 75px ;
+    margin-bottom: 50px;
     max-width: 800px;
 }
 .card{
