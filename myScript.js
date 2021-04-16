@@ -23,12 +23,16 @@ function onWindowLoad() {
         // calcola il codice treno e inietta nel corrispettivo ID
         document.getElementById("codiceCP").innerHTML = calcolaCodiceCP();
          // prende tutti gli argomenti che servono e li processa nella funzione per il costo total.Infine inietta il risultato nel corrispettivo ID
-         document.getElementById("costo").innerHTML = calcolaPrezzoFinale();
+         var kilometri = document.getElementById("kilometri").value;
+         document.getElementById("costo").innerHTML = calcolaPrezzoFinale(fasciaEta,kilometri,prezzoKilometro()) + "€";
     })
 }
 
 
-
+function prezzoKilometro(){
+    var prezzoKilometro = 0.21;
+    return prezzoKilometro;
+}
 function calcolaOfferta(etaPasseggeri) {
     var tipoOfferta;
     if (etaPasseggeri == "minorenne") {
@@ -57,7 +61,6 @@ function calcolaPrezzoFinale(etaPasseggeri,iKilometri, ilPrezzoKilometro) {
     var sconto;
     var scontoAnziani = 0.4;
     var scontoMinori = 0.2;
-    var prezzoKilometro = 0.21;
     var prezzoBiglietto = iKilometri * ilPrezzoKilometro;
     prezzoBigliettoUmano = prezzoBiglietto.toFixed(2);
     if (etaPasseggeri =="minorenne" ) {
